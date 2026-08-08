@@ -1,7 +1,7 @@
 ---
 # yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
 # image will be published to ghcr.io/<user>/<name>
-name: template
+name: slime-image
 # description will be included in the image's metadata
 description: This is my personal OS image.
 
@@ -23,8 +23,20 @@ modules:
         - atim/starship
     install:
       packages:
+        - niri
         - micro
         - starship
+        - xwayland-satellite
+        - polkit-gnome 
+        - xdg-desktop-portal-gnome
+        - firefox
+        - mako
+        - waybar
+        - alacritty
+        - awww
+        - swayidle
+        - swaylock
+        - fuzzel
     remove:
       packages:
         # example: removing firefox (in favor of the flatpak)
