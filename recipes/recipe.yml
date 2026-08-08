@@ -6,7 +6,7 @@ name: slime-image
 description: This is my personal OS image.
 
 # the base image to build on top of (FROM) and the version tag to use
-base-image: ghcr.io/ublue-os/silverblue-main
+base-image: ghcr.io/ublue-os/bazzite-deck-nvidia-gnome:stable
 image-version: latest # You can pin to a specific version of Fedora as well
 
 # module configuration, executed in order
@@ -22,7 +22,7 @@ modules:
       copr:
         - atim/starship
         - che/nerd-fonts
-        - lizardbyte/sunshine-beta
+        - lizardbyte/stable
     install:
       packages:
         - niri
