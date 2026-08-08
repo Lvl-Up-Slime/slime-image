@@ -26,6 +26,7 @@ modules:
         - niri
         - micro
         - starship
+        - fish
         - xwayland-satellite
         - polkit-gnome 
         - xdg-desktop-portal-gnome
