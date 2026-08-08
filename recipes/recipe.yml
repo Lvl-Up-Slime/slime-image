@@ -28,7 +28,7 @@ modules:
         - starship
         - fish
         - xwayland-satellite
-        - polkit-kde-agent
+        - polkit-kde
         - firefox
         - mako
         - waybar
