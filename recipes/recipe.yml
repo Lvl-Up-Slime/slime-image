@@ -28,13 +28,12 @@ modules:
         - starship
         - fish
         - xwayland-satellite
-        - polkit-gnome 
-        - xdg-desktop-portal-gnome
+        - polkit-kde-agent
         - firefox
         - mako
         - waybar
         - alacritty
-        - awww
+        - swaybg
         - swayidle
         - swaylock
         - fuzzel
