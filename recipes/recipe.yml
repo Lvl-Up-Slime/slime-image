@@ -21,12 +21,15 @@ modules:
     repos:
       copr:
         - atim/starship
+        - che/nerd-fonts
+        - lizardbyte/sunshine-beta
     install:
       packages:
         - niri
         - micro
         - starship
         - fish
+        - nvim
         - xwayland-satellite
         - polkit-kde
         - firefox
@@ -37,6 +40,8 @@ modules:
         - swayidle
         - swaylock
         - fuzzel
+        - overpass-nerd-fonts
+        - sunshine
     remove:
       packages:
         # example: removing firefox (in favor of the flatpak)
