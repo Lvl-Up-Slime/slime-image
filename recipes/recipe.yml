@@ -13,6 +13,8 @@ image-version: latest # You can pin to a specific version of Fedora as well
 # you can include multiple instances of the same module
 modules:
   - from-file: fonts.yml
+  - from-file: systemd.yml
+
   - type: files
     files:
       - source: system
@@ -22,7 +24,6 @@ modules:
     repos:
       copr:
         - atim/starship
-        - che/nerd-fonts
         - lizardbyte/stable
     install:
       packages:
@@ -50,10 +51,6 @@ modules:
         - firefox
         - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
 
-  - type: script
-    snippets:
-      - setcap cap_sys_admin+p $(readlink -f $(which sunshine))
-
   - type: default-flatpaks
     configurations:
       - notify: true # Send notification after install/uninstall is finished (true/false)
@@ -63,5 +60,10 @@ modules:
           - org.mozilla.firefox
           - org.gnome.Loupe
       - scope: user # Also add Flathub user repo, but no user packages
+
+  - type: script
+    # patch for autologin
+    snippets:
+      - 'sed -i "s/Session=gnome-wayland.desktop/Session=niri.desktop/" /usr/libexec/bazzite-autologin'
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully

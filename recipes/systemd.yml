@@ -1,0 +1,4 @@
+type: systemd
+user:
+  enabled:
+    - app-dev.lizardbyte.app.Sunshine.service
