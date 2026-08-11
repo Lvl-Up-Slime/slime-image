@@ -31,9 +31,10 @@ modules:
         - micro
         - starship
         - fish
-        - nvim
         - xwayland-satellite
         - polkit-kde
+        - pavucontrol
+        - wf-recorder
         - firefox
         - mako
         - waybar
