@@ -25,13 +25,11 @@ modules:
       copr:
         - atim/starship
         - lizardbyte/stable
-        - celestelove/caelestia
     install:
       packages:
         - niri
         - micro
         - starship
-        - caelestia-cli
         - fish
         - xwayland-satellite
         - polkit-kde
