@@ -1,11 +1,29 @@
 type: fonts
+
 fonts:
   nerd-fonts:
-    - FiraCode # don't add spaces or "Nerd Font" suffix
+    - FiraCode
     - JetBrainsMono
     - Overpass
     - NerdFontsSymbolsOnly
+
   google-fonts:
     - Roboto
     - Open Sans
     - Inter
+
+  url-fonts:
+    - name: SF-Pro-Display-Regular
+      url: https://github.com/sahibjotsaggu/San-Francisco-Pro-Fonts/raw/refs/heads/master/SF-Pro-Display-Regular.otf
+
+    - name: SF-Pro-Display-Medium
+      url: https://github.com/sahibjotsaggu/San-Francisco-Pro-Fonts/raw/refs/heads/master/SF-Pro-Display-Medium.otf
+
+    - name: SF-Pro-Display-Semibold
+      url: https://github.com/sahibjotsaggu/San-Francisco-Pro-Fonts/raw/refs/heads/master/SF-Pro-Display-Semibold.otf
+
+    - name: SF-Pro-Display-Bold
+      url: https://github.com/sahibjotsaggu/San-Francisco-Pro-Fonts/raw/refs/heads/master/SF-Pro-Display-Bold.otf
+
+
+

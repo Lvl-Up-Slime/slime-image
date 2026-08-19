@@ -2,41 +2,40 @@
 # yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
 # image will be published to ghcr.io/<user>/<name>
 name: slime-image
-# description will be included in the image's metadata
-description: This is my personal OS image.
+description: My personal lightweigh layer for nvidia-open bazzite atomic OS.
 
-# the base image to build on top of (FROM) and the version tag to use
 base-image: ghcr.io/ublue-os/bazzite-deck-nvidia-gnome
-image-version: testing # You can pin to a specific version of Fedora as well
+image-version: testing 
 
-# module configuration, executed in order
-# you can include multiple instances of the same module
 modules:
   - from-file: fonts.yml
   #- from-file: systemd.yml
-
+  
   - type: files
     files:
       - source: system
-        destination: / # copies files/system/* (* means everything inside it) into your image's root folder /
+        destination: /
 
   - type: dnf
     repos:
+      files:
+        - https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
+        - https://github.com/terrapkg/subatomic-repos/raw/main/terra.repo
       copr:
         - atim/starship
         - lizardbyte/beta
     install:
       packages:
         - niri
-        - noctalia
         - micro
+        - zed
+        - brave-browser
         - starship
         - fish
         - xwayland-satellite
         - polkit-kde
         - pavucontrol
         - wf-recorder
-        - firefox
         - mako
         - waybar
         - alacritty
@@ -44,22 +43,15 @@ modules:
         - swayidle
         - swaylock
         - fuzzel
-        - nerd-fonts
         - sunshine
-    remove:
-      packages:
-        # example: removing firefox (in favor of the flatpak)
-        # "firefox" is the main package, "firefox-langpacks" is a dependency
-        - firefox
-        - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
 
   - type: default-flatpaks
     configurations:
-      - notify: true # Send notification after install/uninstall is finished (true/false)
+      - notify: true 
         scope: system
-        # If no repo information is specified, Flathub will be used by default
-        install: # system flatpaks we want all users to have and not remove
+        install:
           - org.mozilla.firefox
           - org.gnome.Loupe
-      - scope: user # Also add Flathub user repo, but no user packages
+      - scope: user 
+
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
