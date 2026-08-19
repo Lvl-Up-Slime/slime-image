@@ -7,13 +7,13 @@ description: This is my personal OS image.
 
 # the base image to build on top of (FROM) and the version tag to use
 base-image: ghcr.io/ublue-os/bazzite-deck-nvidia-gnome
-image-version: stable # You can pin to a specific version of Fedora as well
+image-version: testing # You can pin to a specific version of Fedora as well
 
 # module configuration, executed in order
 # you can include multiple instances of the same module
 modules:
   - from-file: fonts.yml
-  - from-file: systemd.yml
+  #- from-file: systemd.yml
 
   - type: files
     files:
@@ -28,7 +28,7 @@ modules:
     install:
       packages:
         - niri
-        #- noctalia
+        - noctalia
         - micro
         - starship
         - fish
