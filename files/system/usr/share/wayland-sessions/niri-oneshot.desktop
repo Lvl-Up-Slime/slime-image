@@ -1,7 +1,0 @@
-[Desktop Entry]
-Name=niri (single time session)
-Comment=This session logs you into niri one time
-Exec=/usr/bin/niri-steamos-oneshot
-TryExec=/usr/bin/niri-steamos-oneshot
-Type=Application
-DesktopNames=niri

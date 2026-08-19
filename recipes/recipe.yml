@@ -62,9 +62,4 @@ modules:
           - org.mozilla.firefox
           - org.gnome.Loupe
       - scope: user # Also add Flathub user repo, but no user packages
-
-  - type: script
-    snippets:
-      - 'sed -i "s/Session=gnome-wayland.desktop/Session=niri.desktop/" /usr/libexec/bazzite-autologin'
-      - 'sed -i -e "s/gnome-wayland-oneshot\.desktop/niri-oneshot.desktop/" -e "s/gnome-wayland\.desktop/niri.desktop/" /usr/bin/steamos-session-select'
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
