@@ -27,6 +27,7 @@ modules:
     install:
       packages:
         - niri
+        - noctalia
         - micro
         - zed
         - brave-browser
