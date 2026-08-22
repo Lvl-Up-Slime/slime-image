@@ -24,10 +24,12 @@ modules:
       copr:
         - atim/starship
         - lizardbyte/beta
+        - errornointernet/quickshell
     install:
       packages:
         - niri
         - noctalia
+        - quickshell
         - micro
         - zed
         - brave-browser
