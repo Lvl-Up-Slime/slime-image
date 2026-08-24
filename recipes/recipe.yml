@@ -10,7 +10,7 @@ image-version: stable
 modules:
   - from-file: fonts.yml
   #- from-file: systemd.yml
-  
+
   - type: files
     files:
       - source: system
@@ -30,6 +30,7 @@ modules:
         - niri
         - noctalia
         - quickshell
+        - qemu
         - micro
         - zed
         - brave-browser
@@ -50,11 +51,11 @@ modules:
 
   - type: default-flatpaks
     configurations:
-      - notify: true 
+      - notify: true
         scope: system
         install:
           - org.mozilla.firefox
           - org.gnome.Loupe
-      - scope: user 
+      - scope: user
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
