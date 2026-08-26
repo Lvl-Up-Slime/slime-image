@@ -29,6 +29,7 @@ modules:
       packages:
         - niri
         - noctalia
+        - wlsunset
         - quickshell
         - qemu
         - micro
