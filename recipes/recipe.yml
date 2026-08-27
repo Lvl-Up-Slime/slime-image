@@ -30,7 +30,6 @@ modules:
         - niri
         - noctalia
         - wlsunset
-        - awww
         - quickshell
         - qemu
         - micro
