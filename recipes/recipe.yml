@@ -58,5 +58,8 @@ modules:
           - org.mozilla.firefox
           - org.gnome.Loupe
       - scope: user
+  - type: script
+    scripts: 
+      - install-mosaic-wm.sh
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
