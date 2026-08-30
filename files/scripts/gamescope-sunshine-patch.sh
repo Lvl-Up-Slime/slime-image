@@ -24,7 +24,10 @@ new = '''function post_gamescope_start {
     fi
 
     # Sunshine belongs to the Gamescope session and inherits its environment.
-    sunshine &
+    echo "WAYLAND_DISPLAY=${WAYLAND_DISPLAY:-unset}"
+    echo "GAMESCOPE_WAYLAND_DISPLAY=${GAMESCOPE_WAYLAND_DISPLAY:-unset}"
+
+    WAYLAND_DISPLAY="$GAMESCOPE_WAYLAND_DISPLAY" sunshine &
     SUNSHINE_PID=$!
 }
 
