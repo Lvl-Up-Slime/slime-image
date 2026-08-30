@@ -1,5 +1,5 @@
 type: systemd
 user:
-  enabled:
+  enable:
     - app-dev.lizardbyte.app.Sunshine
 
