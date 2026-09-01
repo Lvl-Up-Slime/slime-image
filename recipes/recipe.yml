@@ -7,6 +7,29 @@ description: My personal lightweigh layer for nvidia-open bazzite atomic OS.
 base-image: ghcr.io/ublue-os/bazzite-deck-nvidia-gnome
 image-version: stable
 
+stages:
+  - name: rust-tools
+    from: docker.io/library/rust:latest
+
+    modules:
+      - type: script
+        snippets:
+          - apt-get update && apt-get install -y git clang pkg-config libdbus-1-dev libssl-dev libpipewire-0.3-dev
+
+          - git clone https://github.com/aashish-thapa/wlctl.git /src/wlctl
+          - cd /src/wlctl && cargo build --release
+
+          - git clone https://github.com/pythops/bluetui.git /src/bluetui
+          - cd /src/bluetui && cargo build --release
+
+          - git clone https://github.com/tsowell/wiremix.git /src/wiremix
+          - cd /src/wiremix && cargo build --release
+
+          - mkdir -p /out
+          - cp /src/wlctl/target/release/wlctl /out/
+          - cp /src/bluetui/target/release/bluetui /out/
+          - cp /src/wiremix/target/release/wiremix /out/
+
 modules:
   - from-file: fonts.yml
   #- from-file: systemd.yml
@@ -15,6 +38,21 @@ modules:
     files:
       - source: system
         destination: /
+
+  - type: copy
+    from: rust-tools
+    src: /out/wlctl
+    dest: /usr/bin/wlctl
+
+  - type: copy
+    from: rust-tools
+    src: /out/bluetui
+    dest: /usr/bin/bluetui
+
+  - type: copy
+    from: rust-tools
+    src: /out/wiremix
+    dest: /usr/bin/wiremix
 
   - type: dnf
     repos:
